@@ -35,7 +35,11 @@ public class SearchResultsPage {
     /**
      * Aguarda até que os resultados da busca estejam visíveis ou que a mensagem de nenhum resultado apareça.
      */
-    public void waitForResults() {
+    public void waitForResults() throws InterruptedException {
+        Thread.sleep(1000); // Pequena pausa para garantir que a página começou a carregar os resultados
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        js.executeScript("window.scrollBy(0, 1500);");
         new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(300))
