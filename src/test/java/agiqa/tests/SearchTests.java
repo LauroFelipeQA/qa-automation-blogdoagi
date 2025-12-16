@@ -13,7 +13,7 @@ public class SearchTests extends BaseTest {
 
     @Test
     @DisplayName("Cenário 1: Busca com resultados e abertura do primeiro artigo")
-    void searchWithResultsAndOpenFirst() {
+    void searchWithResultsAndOpenFirst() throws InterruptedException {
         // Preparação: define o termo de busca existente
         String searchTerm = Config.get("search.term.existing", "atestado");
 
