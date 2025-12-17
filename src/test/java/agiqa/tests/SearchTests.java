@@ -22,8 +22,6 @@ public class SearchTests extends BaseTest {
                 .open(baseUrl)
                 .openSearch()
                 .search(searchTerm);
-        //adicionado para burlar o erro de paginação do blog, porém não é o ideal, apenas paliativo
-        driver.get("https://blog.agibank.com.br/page/2/?s=" + searchTerm);
 
         SearchResultsPage results = new SearchResultsPage(driver);
         results.waitForResults();
