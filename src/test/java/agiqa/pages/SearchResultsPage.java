@@ -40,6 +40,7 @@ public class SearchResultsPage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
 
         js.executeScript("window.scrollBy(0, 1500);");
+
         new FluentWait<>(driver)
                 .withTimeout(Duration.ofSeconds(30))
                 .pollingEvery(Duration.ofMillis(300))
